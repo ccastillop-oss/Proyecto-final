@@ -1,0 +1,143 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f8;
+    color: #333333;
+}
+
+/* --- 2. SALTAR AL CONTENIDO PRINCIPAL (position + :focus) --- */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 10px;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 1000;
+    transition: top 0.3s ease;
+}
+
+/* Solo es visible cuando recibe el foco con la tecla Tab */
+.skip-link:focus {
+    top: 10px;
+}
+
+/* --- 3. NAVEGACIÓN ATRACTIVA CON FLEXBOX (3+ propiedades CSS) --- */
+header {
+    background-color: #1a202c;
+    padding: 15px 30px;
+}
+
+nav {
+    display: flex; /* Uso de Flexbox */
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2d3748;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* --- 4. PSEUDO-CLASE :hover INTERACTIVA --- */
+nav a:hover {
+    background-color: #4a5568;
+    transform: translateY(-2px);
+    color: #cbd5e0;
+}
+
+/* --- 5. CONTENIDO PRINCIPAL Y MODELO DE CAJA EN IMÁGENES --- */
+main {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: #2d3748;
+}
+
+/* Modelo de caja aplicado a TODAS las imágenes (border, padding, border-radius) */
+img {
+    border: 3px solid #cbd5e0;
+    padding: 8px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Efecto hover interactivo adicional en las imágenes */
+img:hover {
+    transform: scale(1.03);
+    border-color: #3182ce;
+}
+
+/* --- 6. ELEMENTO PADRE CON PROPIEDAD GRID (Al menos 2 columnas) --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* --- 7. SELECTOR nth-child --- */
+/* Modifica de forma alternativa las imágenes dentro de la rejilla */
+.grid-container img:nth-child(odd) {
+    border-radius: 25px 5px 25px 5px;
+    border-color: #319795;
+}
+
+.grid-container img:nth-child(even) {
+    border-radius: 5px 25px 5px 25px;
+    border-color: #d69e2e;
+}
+
+.grid-container img:nth-child(3n) {
+    border-radius: 50%; /* Esquinas redondas tipo círculo para cada 3er elemento */
+}
+
+/* --- 8. FLEX EN SECCIONES DE CONTENIDO --- */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1a202c;
+    color: #ffffff;
+    margin-top: 40px;
+}
